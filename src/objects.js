@@ -15,11 +15,7 @@ const hasProperty = (property, object) => {
 };
 
 const isOver65 = person => {
-    if (person.age > 65) {
-        return true;
-    } else {
-        return false;
-    }
+    return person.age > 65;
 };
 
 const getAges = people => {
@@ -27,19 +23,28 @@ const getAges = people => {
 };
 
 const findByName = (name, people) => {
-
+    return people.find(fname => fname.name === name);
 };
 
 const findHondas = cars => {
-    // your code here
+    return cars.filter(car => car.manufacturer === "Honda");
 };
 
 const averageAge = people => {
-    // your code here
+    const ages = people.map(person => person.age);
+    const average = ages.reduce((x, y) => x + y);
+    return average / people.length;
 };
 
 const createTalkingPerson = (name, age) => {
-    // your code here
+    const person = {
+        name: name,
+        age: age,
+        introduce() {
+            return `Hi Fred, my name is ${this.name} and I am ${this.age}!`
+        }
+    };
+    return person;
 };
 
 module.exports = {

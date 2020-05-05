@@ -15,7 +15,8 @@ const addToArray = (element, array) => {
 };
 
 const addToArray2 = (element, array) => {
-
+    const newArray = array.concat(element);
+    return newArray;
 };
 
 const removeNthElement = (index, array) => {
@@ -27,35 +28,35 @@ const numbersToStrings = numbers => {
 };
 
 const uppercaseWordsInArray = strings => {
-
+    return strings.map(item => item.toUpperCase());
 };
 
 const reverseWordsInArray = strings => {
-    // your code here
+    return strings.map(item => item.split('').reverse().join(''));
 };
 
 const onlyEven = numbers => {
-    // your code here
+    return numbers.filter(item => item % 2 === 0);
 };
 
 const removeNthElement2 = (index, array) => {
-    // your code here
+    return array.slice(0, index).concat(array.slice(index + 1));
 };
 
 const elementsStartingWithAVowel = strings => {
-    // your code here
+    return strings.filter(item => /^[aeiou]/i.test(item));
 };
 
 const removeSpaces = string => {
-    // your code here
+    return string.split(' ').join('');
 };
 
 const sumNumbers = numbers => {
-    // your code here
+    return numbers.reduce((x, y) => x + y);
 };
 
 const sortByLastLetter = strings => {
-    // your code here
+    return strings.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
 };
 
 module.exports = {
